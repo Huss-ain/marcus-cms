@@ -1,12 +1,17 @@
 export default ({ env }) => ({
     upload: {
       config: {
-        provider: 'strapi-provider-cloudflare-r2',
+        provider: 'aws-s3',
         providerOptions: {
-          accountId: env('R2_ACCOUNT_ID'),
-          accessKeyId: env('R2_ACCESS_KEY_ID'),         // <-- v0.3.0 expects these
-          secretAccessKey: env('R2_SECRET_ACCESS_KEY'), // <-- v0.3.0 expects these
-          bucket: env('R2_BUCKET'),
+          accessKeyId: env('R2_ACCESS_KEY_ID'),
+          secretAccessKey: env('R2_SECRET_ACCESS_KEY'),
+          endpoint: env('R2_ENDPOINT'), // e.g. https://<accountid>.r2.cloudflarestorage.com
+          region: 'auto',
+          params: {
+            Bucket: env('R2_BUCKET'),
+          },
+          s3ForcePathStyle: true,
+          // Optionally add publicUrl if you want public links
           publicUrl: env('R2_PUBLIC_URL'),
         },
       },
