@@ -11,11 +11,13 @@ export default ({ env }) => ({
             endpoint: env('R2_ENDPOINT'),
             region: 'auto',
             signatureVersion: 'v4',
-            forcePathStyle: true, // This is the new key for AWS SDK v3
+            forcePathStyle: true,
           },
           params: {
             Bucket: env('R2_BUCKET'),
           },
+          // Add publicUrl here:
+          publicUrl: 'https://pub-f4707cbe468245578d759d0602fa68f0.r2.dev',
         },
       },
     },
