@@ -390,6 +390,8 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Excerpt: Schema.Attribute.Text;
+    Featuredcontent: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     FeaturedImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;

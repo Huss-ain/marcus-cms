@@ -40,6 +40,10 @@
     },
     "Excerpt": {
       "type": "text"
+    },
+    "Featuredcontent": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
