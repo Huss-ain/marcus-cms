@@ -1,22 +1,12 @@
 export default ({ env }) => ({
     upload: {
       config: {
-        provider: 'aws-s3',
+        provider: 'strapi-provider-cloudflare-r2',
         providerOptions: {
-          s3Options: {
-            credentials: {
-              accessKeyId: env('R2_ACCESS_KEY_ID'),
-              secretAccessKey: env('R2_SECRET_ACCESS_KEY'),
-            },
-            endpoint: env('R2_ENDPOINT'),
-            region: 'auto',
-            signatureVersion: 'v4',
-            forcePathStyle: true,
-          },
-          params: {
-            Bucket: env('R2_BUCKET'),
-          },
-          // Use environment variable for publicUrl
+          accountId: env('R2_ACCOUNT_ID'),
+          accessKeyId: env('R2_ACCESS_KEY_ID'),
+          secretAccessKey: env('R2_SECRET_ACCESS_KEY'),
+          bucket: env('R2_BUCKET'),
           publicUrl: env('R2_PUBLIC_URL'),
         },
       },
