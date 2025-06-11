@@ -16,8 +16,8 @@ export default ({ env }) => ({
           params: {
             Bucket: env('R2_BUCKET'),
           },
-          // Add publicUrl here:
-          publicUrl: 'https://pub-f4707cbe468245578d759d0602fa68f0.r2.dev',
+          // Use environment variable for publicUrl
+          publicUrl: env('R2_PUBLIC_URL'),
         },
       },
     },
