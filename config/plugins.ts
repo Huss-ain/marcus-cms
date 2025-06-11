@@ -1,4 +1,8 @@
-export default ({ env }) => ({
+export default ({ env }) => {
+  console.log('ALL ENV:', process.env);
+  console.log('BUCKET:', env('R2_BUCKET'));
+  
+  return {
     upload: {
       config: {
         provider: 'strapi-provider-cloudflare-r2',
@@ -11,4 +15,5 @@ export default ({ env }) => ({
         },
       },
     },
-  });
+  };
+};
