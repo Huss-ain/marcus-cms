@@ -1,6 +1,7 @@
 export default ({ env }) => {
     console.log('ALL ENV:', process.env);
     console.log('BUCKET:', env('R2_BUCKET'));
+    console.log('PROVIDER:', require('strapi-provider-cloudflare-r2'));
     
     return {
       upload: {
