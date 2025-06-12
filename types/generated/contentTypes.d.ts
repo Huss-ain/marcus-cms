@@ -400,6 +400,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     PublicationDate: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
     Tag: Schema.Attribute.Component<'blog.tag', true>;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
